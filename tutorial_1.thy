@@ -40,6 +40,11 @@ lemma 4: "(\<not>P \<longrightarrow> Q) \<longrightarrow> (\<not>Q \<longrightar
   apply assumption
 
 lemma 5: "P \<or> \<not>P"
-  oops
+  apply (rule classical)
+  apply (rule disjI1)
+  apply (rule classical)
+  apply (erule notE)
+  apply (rule disjI2)
+  apply assumption
 
 
