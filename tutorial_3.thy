@@ -4,7 +4,7 @@ Main
 
 begin
 
-locale Geom =
+locale group =
   fixes on :: "'p \<Rightarrow> 'l \<Rightarrow> bool" 
   assumes line_on_two_pts: "a \<noteq> b \<Longrightarrow> \<exists>l. on a l \<and> on b l"
    and line_on_two_pts_unique: "\<lbrakk> a \<noteq> b; on a l; on b l; on a m; on b m \<rbrakk> \<Longrightarrow> l = m"
