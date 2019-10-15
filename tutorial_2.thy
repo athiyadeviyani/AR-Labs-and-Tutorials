@@ -23,7 +23,6 @@ lemma 3: "\<not>(\<forall> x. P x) \<Longrightarrow> \<exists> x. \<not>P x"
   apply (rule ccontr)
   apply (erule notE)
   apply (rule exI)
-  by assumption
+  apply assumption
   
-
 end
