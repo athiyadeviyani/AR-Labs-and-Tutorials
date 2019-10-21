@@ -3,13 +3,15 @@ imports Main
 
 begin
 
-lemma 1: "(P \<longrightarrow>(Q\<longrightarrow>R))\<longrightarrow>((P\<longrightarrow>Q)\<longrightarrow>(P\<longrightarrow>R))"
-proof (rule impI, rule impI, rule impI)
-  assume "P" "P \<longrightarrow> Q \<longrightarrow> R" 
-    then have qr: "Q \<longrightarrow> R" by fast
-    assume "P" "P \<longrightarrow> Q" 
-    then have "Q" by blast
-    then show "R" using qr by blast
+lemma 1: "(P ⟶(Q⟶R))⟶((P⟶Q)⟶(P⟶R))"
+proof (rule impI)+
+  assume 1: "(P ⟶(Q⟶R))" and 2: "P⟶Q" and 3: "P"
+  from 2 and 3
+  have 4: "Q" by (rule mp)
+  from 1 and 3
+  have 5: "Q⟶R" by (rule mp)
+  from 5 and 4
+  show "R" by (rule mp) (* replace with blast *)
 qed
 
 lemma 2: "(\<forall>x. P x \<longrightarrow> Q)\<longrightarrow>(\<exists>x. P x\<longrightarrow>Q)"
