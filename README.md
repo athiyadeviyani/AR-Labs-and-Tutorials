@@ -1,2 +1,2 @@
-# AR-labs
-Automated Reasoning labs with Isabelle (HOL)
+# AR-Labs-and-Tutorials
+Automated Reasoning labs, tutorials and supplementary lecture theory files in Isabelle (HOL)
